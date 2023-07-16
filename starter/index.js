@@ -96,3 +96,17 @@ console.log("---------------------------------");
 numberOfMonths = finances.length;
 console.log("Total Months: " + numberOfMonths);
 
+// Calculating  total amount of Profit/Loses for the entire period  
+
+var total = 0; //initialisation 
+
+
+//sum the profit/losses from roll 1 to 86
+
+for (var i = 0; i < finances.length; i++) {     
+  total += finances[i][1];
+}
+console.log("Total: " + total); // console log outside of the for loop to avoid printing every iteration
+
+
+
