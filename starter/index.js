@@ -106,17 +106,22 @@ var total = 0; //initialisation
 for (var i = 0; i < finances.length; i++) {     
   total += finances[i][1];
 }
-console.log("Total: " + total); // console log outside of the for loop to avoid printing every iteration
+console.log("Total: " + "$" + total); // console log outside of the for loop to avoid printing every iteration
 
 // Calulate the sum of the changes in profit/losses over entire period
 
 var sumofChanges = 0; // initialising the sum of changes 
+var largestDiff = 0;
 
 for (var i = 1; i  < finances.length; i++) {
   var diff = finances[i][1] - finances[i-1][1]; 
   sumofChanges += diff; // 
+  if (diff > largestDiff) {
+    largestDiff = diff;
+  }
+
 }
 
 averageChange = (sumofChanges/(numberOfMonths - 1)).toFixed(2); // rounding to d.p 
 console.log("Average Change: " + averageChange); // print to console
-
+console.log("Greatest Increase in Profits/Losses: " + largestDiff);
