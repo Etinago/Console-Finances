@@ -137,5 +137,5 @@ for (var i = 1; i  < finances.length; i++) {
 
 averageChange = (sumofChanges/(numberOfMonths - 1)).toFixed(2); // rounding to d.p 
 console.log("Average Change: " + averageChange); // print to console
-console.log("Greatest Increase in Profits/Losses: " + largestDiff  + " ,Month: " + dateOf);
-console.log("Greatest Decrease in Profits/Losses: " + smallestDiff  + " ,Month: " + dateOfsmall);
+console.log("Greatest Increase in Profits/Losses: " + "($" + largestDiff + ")"  + " ,Month: " + dateOf);
+console.log("Greatest Decrease in Profits/Losses: " + "($" + smallestDiff + ")" + " ,Month: " + dateOfsmall);
