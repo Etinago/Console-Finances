@@ -111,17 +111,31 @@ console.log("Total: " + "$" + total); // console log outside of the for loop to 
 // Calulate the sum of the changes in profit/losses over entire period
 
 var sumofChanges = 0; // initialising the sum of changes 
-var largestDiff = 0;
+var largestDiff = 0; // Greatest Profit/Losses
+var smallestDiff = 0; // Smallest Profit or losses 
 
 for (var i = 1; i  < finances.length; i++) {
-  var diff = finances[i][1] - finances[i-1][1]; 
+  var diff = finances[i][1] - finances[i-1][1]; // diff = difference between each month 
   sumofChanges += diff; // 
   if (diff > largestDiff) {
     largestDiff = diff;
+    var dateOf = finances[i][0];
+  }
+}
+
+// Calculating for Greatest Decrease 
+
+for (var i = 1; i  < finances.length; i++) {
+  var diff = finances[i][1] - finances[i-1][1]; // diff = difference between each month 
+  sumofChanges += diff; // 
+  if (diff < smallestDiff) {
+    smallestDiff = diff;
+    var dateOfsmall = finances[i][0];
   }
 
 }
 
 averageChange = (sumofChanges/(numberOfMonths - 1)).toFixed(2); // rounding to d.p 
 console.log("Average Change: " + averageChange); // print to console
-console.log("Greatest Increase in Profits/Losses: " + largestDiff);
+console.log("Greatest Increase in Profits/Losses: " + largestDiff  + " ,Month: " + dateOf);
+console.log("Greatest Decrease in Profits/Losses: " + smallestDiff  + " ,Month: " + dateOfsmall);
