@@ -139,3 +139,4 @@ averageChange = (sumofChanges/(numberOfMonths - 1)).toFixed(2); // rounding to d
 console.log("Average Change: " + averageChange); // print to console
 console.log("Greatest Increase in Profits/Losses: " + "($" + largestDiff + ")"  + " ,Month: " + dateOf);
 console.log("Greatest Decrease in Profits/Losses: " + "($" + smallestDiff + ")" + " ,Month: " + dateOfsmall);
+
